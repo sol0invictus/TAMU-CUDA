@@ -1,0 +1,28 @@
+                           README
+
+If you have an account on ada.tamu.edu, you can scp CUDA dir to ada. 
+ 
+ $scp CUDA YOUR_NETID@ada1.tamu.edu:
+
+Notice that only 5 login nodes (ada1, ada2, ..., ada5) on Ada are 
+equipped with either one or two K20s. You can check them with 
+
+ $nvidia-smi
+
+Then you can 
+
+1. load CUDA module.
+
+ $ml CUDA
+
+2. compile the CUDA code you are working on.
+
+ $cd hello_world 
+ $nvcc hello_world_device.cu
+
+3. submit a job to run the CUDA code in a GUP node 
+   You may need to modify the job script ada_cuda_run.sh accordingly.
+
+ $bsub < ada_cuda_run.sh
+
+Good luck!
